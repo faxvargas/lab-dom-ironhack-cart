@@ -1,10 +1,20 @@
-// ITERATION 1
+
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
+  //declaramos price que es igual a product con qeryselector para seleccionar la etiqueta price y el span para obtener lo que hay dentro de ella
+  const price = product.querySelector(".price span")
+  const quantity = product.querySelector(".quantity input")
+  const subtotal = product.querySelector(".subtotal span")
+  console.log(subtotal)
+  //declaré realPrice con parseInt para poder volverlo un numero y adentro de el puste price con texcontent para obtener el texto que viene dentro de la etiqueta  
+  const realPrice = parseInt(price.textContent)
+  const realQuantity = parseInt(quantity.value)
+  const multiplicador = realPrice * realQuantity
+  subtotal.innerHTML = multiplicador
 
-  //... your code goes here
 }
+
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
