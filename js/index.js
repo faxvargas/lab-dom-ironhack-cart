@@ -39,18 +39,18 @@ function removeProduct(remove) {
 // ITERATION 5
 
 function createProduct() {
-  const inputName = document.getElementById('newProductName');
+  const name = document.getElementById('newProductName');
 
-  const inputPrice = document.getElementById('newProductPrice');
+  const price2 = document.getElementById('newProductPrice');
 
-  const cartTableBodyElement = document.querySelector('#cart tbody');
+  const bodycarrito = document.querySelector('#cart tbody');
 
-  cartTableBodyElement.innerHTML += `
+ bodycarrito.innerHTML += `
       <tr class="product">
         <td class="name">
-          <span>${inputName.value}</span>
+          <span>${name.value}</span>
         </td>
-        <td class="price">$<span>${inputPrice.value}</span></td>
+        <td class="price">$<span>${price2.value}</span></td>
         <td class="quantity">
           <input type="number" value="0" min="0" placeholder="Quantity" />
         </td>
