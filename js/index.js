@@ -17,31 +17,49 @@ function updateSubtotal(product) {
 
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
+  const total = document.querySelector('#total-value-span')
   const singleProduct = document.querySelector('.product');
   updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2
-  //... your code goes here
-
+const unSoloProducto = document.querySelector('.product')
+  updateSubtotal(unSoloProducto)
+  //ITERATION 2
+  const productos = document.getElementById('product')
   // ITERATION 3
-  //... your code goes here
+  let totalt = updateSubtotal(productos)
+  totalt.innerHTML = total
 }
 
 // ITERATION 4
 
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+function removeProduct(remove) {
+  let retirar = remove.parentNode.parentNode;
+  retirar.parentNode.removeChild(retirar);
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const inputName = document.getElementById('newProductName');
+
+  const inputPrice = document.getElementById('newProductPrice');
+
+  const cartTableBodyElement = document.querySelector('#cart tbody');
+
+  cartTableBodyElement.innerHTML += `
+      <tr class="product">
+        <td class="name">
+          <span>${inputName.value}</span>
+        </td>
+        <td class="price">$<span>${inputPrice.value}</span></td>
+        <td class="quantity">
+          <input type="number" value="0" min="0" placeholder="Quantity" />
+        </td>
+        <td class="subtotal">$<span>0</span></td>
+        <td class="action">
+          <button onclick="removeProduct(this)" class="btn btn-remove">Remove</button>
+        </td>
+      </tr>
+    `;
 }
 
 window.addEventListener('load', () => {
@@ -49,4 +67,4 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
-});
+})
